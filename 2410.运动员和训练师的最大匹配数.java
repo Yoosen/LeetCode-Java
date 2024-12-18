@@ -10,9 +10,26 @@
 
 // @lcpr-template-end
 // @lc code=start
+
+import java.util.Arrays;
+
 class Solution {
     public int matchPlayersAndTrainers(int[] players, int[] trainers) {
-        
+        Arrays.sort(players);
+        Arrays.sort(trainers);
+
+        int preIndex = 0;
+        int ans = 0;
+        for (int player : players) {
+            for (int i = preIndex; i < trainers.length; i++) {
+                if (player <= trainers[i]) {
+                    ans++;
+                    preIndex = i + 1;
+                    break;
+                }
+            }
+        }
+        return ans;
     }
 }
 // @lc code=end
