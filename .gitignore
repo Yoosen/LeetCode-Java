@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+.lcpr_data
+leetcode
+plugins.json
+
 # BlueJ files
 *.ctxt
 
